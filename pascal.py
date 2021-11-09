@@ -1,15 +1,11 @@
-input_line = int(input())
-
-for i in range(1, input_line + 1):
-    pascal_line_input = int(input())
-    
-    print("#{}".format(i))
-    for line_a in range(1, pascal_line_input + 1):
-        for line_b in range(1, line_a + 1):     
-            if(line_b == line_a):
-                line_b = 1
-                print(line_b, end=" ")
-            else:
-                print(line_b, end=" ")
-                            
-        print()
+result = []
+for t in range(int(input())) :
+    result.append(f"#{t+1}")
+    L = [1]
+    for n in range(int(input())) :
+        result.append(" ".join(list(map(str,L))))
+        L1 = [0] + L
+        for i in range(len(L)) :
+            L1[i] += L[i]
+        L = L1
+print("\n".join(result))
